@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Node>
+  <UpdateInfo>
+    <UpdateTime Date="2017/05/31 08:45"></UpdateTime>
+    <Version Num="1.0.0"></Version>
+  </UpdateInfo>
+<ProgramInfo>
+ <ProgramName Name="UpdateClient"></ProgramName>
+</ProgramInfo>
+</Node>

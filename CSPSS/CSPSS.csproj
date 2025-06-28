@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C25489F8-4A51-47B8-B117-D016DEB71343}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSPSS</RootNamespace>
+    <AssemblyName>进销存管理系统客户端</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>xz 200X200.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <PublishUrl>D:\wwwroot\webserver\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2F608BD459D7AEE851E16610A883C89B9D0B723E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CSPSS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BozcBarCode, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BozcBarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\office.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XizheC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\XizheC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BASE_INFO\ACCOUNTANT_COURSE .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\ACCOUNTANT_COURSE .designer.cs">
+      <DependentUpon>ACCOUNTANT_COURSE .cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\CUSTOMER_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\CUSTOMER_INFO.designer.cs">
+      <DependentUpon>CUSTOMER_INFO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\CUSTOMER_INFOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\CUSTOMER_INFOT.designer.cs">
+      <DependentUpon>CUSTOMER_INFOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\DEPART.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\DEPART.designer.cs">
+      <DependentUpon>DEPART.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\EMPLOYEE_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\EMPLOYEE_INFO.designer.cs">
+      <DependentUpon>EMPLOYEE_INFO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\MATERIAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\MATERIAL.designer.cs">
+      <DependentUpon>MATERIAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\MOLD_BASET.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\MOLD_BASET.designer.cs">
+      <DependentUpon>MOLD_BASET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\POSITION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\POSITION.designer.cs">
+      <DependentUpon>POSITION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\PRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\PRODUCT.designer.cs">
+      <DependentUpon>PRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\SUPPLIER_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\SUPPLIER_INFO.designer.cs">
+      <DependentUpon>SUPPLIER_INFO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\SUPPLIER_INFOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\SUPPLIER_INFOT.designer.cs">
+      <DependentUpon>SUPPLIER_INFOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\TYPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\TYPE.designer.cs">
+      <DependentUpon>TYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE_INFO\UNIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASE_INFO\UNIT.designer.cs">
+      <DependentUpon>UNIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dgvInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dgvInfo.designer.cs">
+      <DependentUpon>dgvInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_PAYMENT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_PAYMENT.designer.cs">
+      <DependentUpon>ADVANCE_PAYMENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_PAYMENTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_PAYMENTT.designer.cs">
+      <DependentUpon>ADVANCE_PAYMENTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLES.designer.cs">
+      <DependentUpon>ADVANCE_RECEIVABLES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLEST.designer.cs">
+      <DependentUpon>ADVANCE_RECEIVABLEST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_ORDER.designer.cs">
+      <DependentUpon>PAYMENT_ORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_ORDERT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_ORDERT.designer.cs">
+      <DependentUpon>PAYMENT_ORDERT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES.designer.cs">
+      <DependentUpon>RECEIVABLES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLEST.designer.cs">
+      <DependentUpon>RECEIVABLEST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES_ORDER.designer.cs">
+      <DependentUpon>RECEIVABLES_ORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES_ORDERT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES_ORDERT.designer.cs">
+      <DependentUpon>RECEIVABLES_ORDERT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\REQUEST_MONEY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\REQUEST_MONEY.designer.cs">
+      <DependentUpon>REQUEST_MONEY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\REQUEST_MONEYT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\REQUEST_MONEYT.designer.cs">
+      <DependentUpon>REQUEST_MONEYT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\VOUCHER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\VOUCHER.designer.cs">
+      <DependentUpon>VOUCHER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\VOUCHERT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\VOUCHERT.designer.cs">
+      <DependentUpon>VOUCHERT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOADING.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOADING.designer.cs">
+      <DependentUpon>LOADING.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN.designer.cs">
+      <DependentUpon>MAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SELL_MANAGE\ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SELL_MANAGE\ORDER.designer.cs">
+      <DependentUpon>ORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SELL_MANAGE\ORDERT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SELL_MANAGE\ORDERT.designer.cs">
+      <DependentUpon>ORDERT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SELL_MANAGE\SELLRETURN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SELL_MANAGE\SELLRETURN.designer.cs">
+      <DependentUpon>SELLRETURN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SELL_MANAGE\SELLRETURNT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SELL_MANAGE\SELLRETURNT.designer.cs">
+      <DependentUpon>SELLRETURNT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SELL_MANAGE\SELLTABLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SELL_MANAGE\SELLTABLE.designer.cs">
+      <DependentUpon>SELLTABLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SELL_MANAGE\SELLTABLET.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SELL_MANAGE\SELLTABLET.designer.cs">
+      <DependentUpon>SELLTABLET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\INVENTORY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\INVENTORY.designer.cs">
+      <DependentUpon>INVENTORY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\MISC_STORAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\MISC_STORAGE.designer.cs">
+      <DependentUpon>MISC_STORAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\MISC_STORAGET.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\MISC_STORAGET.designer.cs">
+      <DependentUpon>MISC_STORAGET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\SCRAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\SCRAP.designer.cs">
+      <DependentUpon>SCRAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\SCRAPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOCK_MANAGE\SCRAPT.designer.cs">
+      <DependentUpon>SCRAPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER_MANAGE\EDIT_PWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER_MANAGE\EDIT_PWD.designer.cs">
+      <DependentUpon>EDIT_PWD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER_MANAGE\EDIT_RIGHT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER_MANAGE\EDIT_RIGHT.designer.cs">
+      <DependentUpon>EDIT_RIGHT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER_MANAGE\LOGIN_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER_MANAGE\LOGIN_INFO.designer.cs">
+      <DependentUpon>LOGIN_INFO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER_MANAGE\USER_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER_MANAGE\USER_INFO.designer.cs">
+      <DependentUpon>USER_INFO.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BASE_INFO\ACCOUNTANT_COURSE .resx">
+      <DependentUpon>ACCOUNTANT_COURSE .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\CUSTOMER_INFO.resx">
+      <DependentUpon>CUSTOMER_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\CUSTOMER_INFOT.resx">
+      <DependentUpon>CUSTOMER_INFOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\DEPART.resx">
+      <DependentUpon>DEPART.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\EMPLOYEE_INFO.resx">
+      <DependentUpon>EMPLOYEE_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\MATERIAL.resx">
+      <DependentUpon>MATERIAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\MOLD_BASET.resx">
+      <DependentUpon>MOLD_BASET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\POSITION.resx">
+      <DependentUpon>POSITION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\PRODUCT.resx">
+      <DependentUpon>PRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\SUPPLIER_INFO.resx">
+      <DependentUpon>SUPPLIER_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\SUPPLIER_INFOT.resx">
+      <DependentUpon>SUPPLIER_INFOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\TYPE.resx">
+      <DependentUpon>TYPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASE_INFO\UNIT.resx">
+      <DependentUpon>UNIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dgvInfo.resx">
+      <DependentUpon>dgvInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\ADVANCE_PAYMENT.resx">
+      <DependentUpon>ADVANCE_PAYMENT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\ADVANCE_PAYMENTT.resx">
+      <DependentUpon>ADVANCE_PAYMENTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLES.resx">
+      <DependentUpon>ADVANCE_RECEIVABLES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLEST.resx">
+      <DependentUpon>ADVANCE_RECEIVABLEST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\PAYMENT_ORDER.resx">
+      <DependentUpon>PAYMENT_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\PAYMENT_ORDERT.resx">
+      <DependentUpon>PAYMENT_ORDERT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\RECEIVABLES.resx">
+      <DependentUpon>RECEIVABLES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\RECEIVABLEST.resx">
+      <DependentUpon>RECEIVABLEST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\RECEIVABLES_ORDER.resx">
+      <DependentUpon>RECEIVABLES_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\RECEIVABLES_ORDERT.resx">
+      <DependentUpon>RECEIVABLES_ORDERT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\REQUEST_MONEY.resx">
+      <DependentUpon>REQUEST_MONEY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\REQUEST_MONEYT.resx">
+      <DependentUpon>REQUEST_MONEYT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\VOUCHER.resx">
+      <DependentUpon>VOUCHER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FINANCIAL_MANAGE\VOUCHERT.resx">
+      <DependentUpon>VOUCHERT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOADING.resx">
+      <DependentUpon>LOADING.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN.resx">
+      <DependentUpon>MAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SELL_MANAGE\ORDER.resx">
+      <DependentUpon>ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SELL_MANAGE\ORDERT.resx">
+      <DependentUpon>ORDERT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SELL_MANAGE\SELLRETURN.resx">
+      <DependentUpon>SELLRETURN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SELL_MANAGE\SELLRETURNT.resx">
+      <DependentUpon>SELLRETURNT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SELL_MANAGE\SELLTABLE.resx">
+      <DependentUpon>SELLTABLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SELL_MANAGE\SELLTABLET.resx">
+      <DependentUpon>SELLTABLET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOCK_MANAGE\INVENTORY.resx">
+      <DependentUpon>INVENTORY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOCK_MANAGE\MISC_STORAGE.resx">
+      <DependentUpon>MISC_STORAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOCK_MANAGE\MISC_STORAGET.resx">
+      <DependentUpon>MISC_STORAGET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOCK_MANAGE\SCRAP.resx">
+      <DependentUpon>SCRAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOCK_MANAGE\SCRAPT.resx">
+      <DependentUpon>SCRAPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER_MANAGE\EDIT_PWD.resx">
+      <DependentUpon>EDIT_PWD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER_MANAGE\EDIT_RIGHT.resx">
+      <DependentUpon>EDIT_RIGHT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER_MANAGE\LOGIN_INFO.resx">
+      <DependentUpon>LOGIN_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER_MANAGE\USER_INFO.resx">
+      <DependentUpon>USER_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Configuration.config" />
+    <None Include="bin\订单.xlsx" />
+    <None Include="bin\销货单.xls" />
+    <None Include="CSPSS_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Service References\ServiceReference1\service1.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="bin\Debug\Image\jiatai.png" />
+    <Content Include="bin\BozcBarCode.dll" />
+    <Content Include="bin\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\Microsoft.Vbe.Interop.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\office.dll" />
+    <Content Include="bin\stdole.dll" />
+    <Content Include="bin\System.Web.dll" />
+    <Content Include="bin\Version.xml" />
+    <Content Include="bin\XizheC.dll" />
+    <Content Include="bin\进销存管理系统客户端.exe" />
+    <Content Include="Image\1.png" />
+    <Content Include="Image\10.png" />
+    <Content Include="Image\102.png" />
+    <Content Include="Image\103.png" />
+    <Content Include="Image\11.png" />
+    <Content Include="Image\12.png" />
+    <Content Include="Image\13.png" />
+    <Content Include="Image\14.png" />
+    <Content Include="Image\15.png" />
+    <Content Include="Image\16.png" />
+    <Content Include="Image\17.png" />
+    <Content Include="Image\18.png" />
+    <Content Include="Image\19.png" />
+    <Content Include="Image\2.png" />
+    <Content Include="Image\20.png" />
+    <Content Include="Image\21.png" />
+    <Content Include="Image\22.png" />
+    <Content Include="Image\23.png" />
+    <Content Include="Image\232.png" />
+    <Content Include="Image\24.png" />
+    <Content Include="Image\25.png" />
+    <Content Include="Image\26.png" />
+    <Content Include="Image\27.png" />
+    <Content Include="Image\28.png" />
+    <Content Include="Image\29.png" />
+    <Content Include="Image\3.png" />
+    <Content Include="Image\30.png" />
+    <Content Include="Image\31.png" />
+    <Content Include="Image\32.png" />
+    <Content Include="Image\33.png" />
+    <Content Include="Image\34.png" />
+    <Content Include="Image\35.png" />
+    <Content Include="Image\36.png" />
+    <Content Include="Image\3623424.png" />
+    <Content Include="Image\37.png" />
+    <Content Include="Image\38.png" />
+    <Content Include="Image\39.png" />
+    <Content Include="Image\4.png" />
+    <None Include="Image\5.png" />
+    <None Include="Image\6.png" />
+    <None Include="Image\7.png" />
+    <None Include="Image\8.png" />
+    <None Include="Image\9.png" />
+    <None Include="Image\40.png" />
+    <None Include="Image\41.png" />
+    <None Include="Image\42.png" />
+    <None Include="Image\43.png" />
+    <None Include="Image\44.png" />
+    <None Include="Image\45.png" />
+    <None Include="Image\46.png" />
+    <None Include="Image\47.png" />
+    <None Include="Image\48.png" />
+    <None Include="Image\49.png" />
+    <None Include="Image\50.png" />
+    <None Include="Image\51.png" />
+    <None Include="Image\52.png" />
+    <None Include="Image\53.png" />
+    <None Include="Image\54.png" />
+    <None Include="Image\55.png" />
+    <None Include="Image\56.png" />
+    <None Include="Image\57.png" />
+    <None Include="Image\58.png" />
+    <None Include="Image\59.png" />
+    <None Include="Image\60.png" />
+    <None Include="Image\61.png" />
+    <None Include="Image\62.png" />
+    <None Include="Image\531.png" />
+    <None Include="Image\541.png" />
+    <None Include="Image\Audit.png" />
+    <None Include="Image\btnAdd.png" />
+    <None Include="Image\btnDelete.png" />
+    <None Include="Image\btnExit.png" />
+    <None Include="Image\btnPrint.png" />
+    <None Include="Image\btnSave.png" />
+    <None Include="Image\btnSearch.png" />
+    <None Include="Image\company.png" />
+    <None Include="Image\Excel_big.png" />
+    <None Include="Image\no_send_audit.png" />
+    <None Include="Image\send_audit.png" />
+    <None Include="Image\submit.png" />
+    <None Include="Image\twinkle.ico" />
+    <None Include="Image\xz 200X200.ico" />
+    <Content Include="xz 200X200.ico" />
+    <None Include="Service References\ServiceReference1\service1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
